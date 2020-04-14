@@ -1,5 +1,50 @@
-/* body {
+body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-} */
+}
+.row {
+  display : flex;
+}
+.col {
+  flex : 1 o auto;
+  margin : 10px;
+}
+.card {
+  box-shadow: 2px 3px 5px rgba(0,0,0, .6);
+}
+.card-header {
+  padding: 10px;
+  background : gray;
+}
+.card-header .title {
+  margin: 0;
+  color: white;
+}
+.card-body {
+  padding : 10px;
+}
+
+.input {
+  padding : 10px;
+  margin : 5px;
+}
+.btn {
+  padding: 10px;
+  box-shadow: 3px 3px 5px rgba(0,0,0, .5);
+  font-weight: bolder;
+  border-radius: 10%;
+  transition: box-shadow .4s;
+}
+.btn-primary {
+  background-color: #61dafb;
+  color:black;
+}
+.btn-danger {
+  background-color: rgb(218, 88, 88);
+  color: white;
+}
+.btn:hover {
+  box-shadow: none;
+  cursor: pointer;
+}
