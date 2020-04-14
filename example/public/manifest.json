@@ -1,0 +1,8 @@
+{
+  "short_name": "@rehmat-falcon/use-local-storage",
+  "name": "@rehmat-falcon/use-local-storage",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
