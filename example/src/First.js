@@ -12,14 +12,13 @@ const First = () => {
         localStorageManager.remove();
         firstInputRef.current.value = "";
     };
-    const { value } = localStorageManager.state;
     return (
         <div className="row">
-            <div className="col card">
+            <div className="col card" style={{ width: '50%' }}>
                 <div className="card-header">
                     <h3 className="title">
                         Update Value
-          </h3>
+                    </h3>
                 </div>
                 <div className="card-body">
                     <input type="text" className="input full" ref={firstInputRef} defaultValue={localStorageManager.state.value}
@@ -27,25 +26,25 @@ const First = () => {
                     />
                     <button className="btn btn-primary" onClick={updateFirst}>
                         Update
-          </button>
+                    </button>
                     <button className="btn btn-danger" onClick={removeStorage}>
                         Delete
-          </button>
+                    </button>
                 </div>
             </div>
-            <div className="col card">
+            <div className="col card" style={{ width: '50%' }}>
                 <div className="card-header">
                     <h3 className="title">
                         Local storage values
-          </h3>
+                    </h3>
                 </div>
                 <div className="card-body">
                     Key : {localStorageManager.key} <br />
-          Exists : {localStorageManager.state.exists && <span>Yes</span>}
-                    {!localStorageManager.state.exists && <span>No</span>}
+                     Exists : {localStorageManager.state.exists && <span>Yes</span>}
+                                {!localStorageManager.state.exists && <span>No</span>}
                     <br />
-          Value : {localStorageManager.state.value} <br />
-          Initial Value : {localStorageManager.nonReactiveState.value}
+                    Value : {localStorageManager.state.value} <br />
+                    Initial Value : {localStorageManager.nonReactiveState.value}
                 </div>
             </div>
         </div>

@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import { useLocalStorage } from '@rehmat-falcon/use-local-storage';
+import React from 'react'
 import "./index.css";
 import First from './First';
 import Second from './Second';
