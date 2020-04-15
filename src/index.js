@@ -1,21 +1,8 @@
 import {useObjectState} from '@rehmat-falcon/use-object-state';
-import { useState } from 'react';
-
-const toJson = obj => JSON.stringify(obj);
-const fromJson = str => JSON.parse(str);
-/**
- * 
- * @param bool useJson 
- * @param object initial 
- * @param string key 
- */
-const saveToLocalStorage = (key, value, useJson) => {
-  let toStore = useJson ? toJson(value) : value;
-  window.localStorage.setItem(key, toStore);
-};
+import { useRef } from 'react';
 
 export const useLocalStorage = (key, initial = "", override = false) => {
-  const [useJson] = useState(typeof initial === "object");
+  const useJson = isObject(initial);
   let initialState;
   if(override) {
     saveToLocalStorage(key, initial,useJson);
@@ -58,3 +45,20 @@ export const useLocalStorage = (key, initial = "", override = false) => {
     remove,
   };
 };
+
+const toJson = obj => JSON.stringify(obj);
+const fromJson = str => JSON.parse(str);
+/**
+ * 
+ * @param bool useJson 
+ * @param object initial 
+ * @param string key 
+ */
+const saveToLocalStorage = (key, value, useJson) => {
+  let toStore = useJson ? toJson(value) : value;
+  window.localStorage.setItem(key, toStore);
+};
+
+function isObject(obj) {
+  return obj !== null && typeof obj === "object" && obj.constructor == Object;
+}
